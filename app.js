@@ -20,17 +20,16 @@ app.set('view engine', 'html');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use(
   sass({
-    src: __dirname + '/public/sass', //where the sass files are 
-    dest: __dirname + '/public/css', //where css should go
+    src: __dirname + '/assets', //where the sass files are 
+    dest: __dirname + '/public', //where css should go
     debug: true
   })
 );
-
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 

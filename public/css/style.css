@@ -1,0 +1,20 @@
+.navbar-title {
+  font-style: bold;
+  font-weight: 2em;
+  color: white;
+  padding-top: 100px; }
+
+.row {
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
+li {
+  list-style-type: none; }
+
+#map-canvas {
+  height: 100vh; }
+
+
+.btn-circle {
+	border-radius: 80%;
+}

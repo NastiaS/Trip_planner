@@ -1,24 +1,140 @@
-<!DOCTYPE html>
-<html>
-<body>
+{% extends "layout.html" %}
 
-<select>
+{% block content %}
+
+
+<div id="map-canvas" class="col-xs-12 col-md-8">
+</div>
+
+<div class="col-xs-6 col-md-4" id="rightCol">
+         
+	<div class="well"> 
+        <ul class="nav nav-stacked" id="sidebar">
+
+            <li><a href="#sec1">Hotels</a>
+				<select>
+					{%for hotel in all_hotels%}
+  					<option>{{hotel.name}}</option>
+   					{% endfor %}
+				</select>
+				<button type="button" class="btn btn-default btn-xs">
+          			<span class="glyphicon glyphicon-remove"></span> 
+        		</button>
+			</li>
+
+            <li><a href="#sec2">Restaurant</a>
+				<select>
+					{%for restaurant in all_restaurants%}
+  					<option>{{restaurant.name}}</option>
+   					{% endfor %}
+				</select>
+				<button type="button" class="btn btn-default btn-xs">
+          			<span class="glyphicon glyphicon-remove"></span> 
+        		</button>
+			</li>
+
+            <li><a href="#sec3">Thngs To Do</a>
+				<select>
+				{%for things_to_do in all_things_to_do%}
+  				<option>{{things_to_do.name}}</option>
+   				{% endfor %}
+				</select>
+				<button type="button" class="btn btn-default btn-xs">
+          			<span class="glyphicon glyphicon-remove"></span> 
+        		</button>
+            </li>
+                
+        </ul>
+    </div>
+
+<div class="row">Day 2</div>
+    <div class="well"> 
+        <ul class="nav nav-stacked" id="sidebar">
+  		<nav>
+  			<ul class="pagination">
+			    <li><a class="btn btn-default btn-circle" href="#">1</a></li>
+
+
+			    <li><a class="btn btn-default btn-circle" href="#">2</a></li>
+			    <li><a class="btn btn-default btn-circle" href="#">3</a></li>
+			    <li>
+	      			<a href="#" aria-label="Next">
+	        			<span aria-hidden="true">&raquo;</span>
+	      			</a>
+    			</li>
+  			</ul>
+		</nav>	
+
+		<li><a href="#">Hotel</a>
+		<li> XXXXXXXXXXXX 
+			<button type="button" class="btn btn-default btn-xs">
+          		<span class="glyphicon glyphicon-remove"></span> 
+        	</button>
+		</li>
+		<li><a href="#">Restaurant</a>
+		<li> XXXXXXXXXXXX 
+			<button type="button" class="btn btn-default btn-xs">
+          		<span class="glyphicon glyphicon-remove"></span> 
+        	</button>
+		</li>
+		<li><a href="#">Things TO Do</a>
+		<li> XXXXXXXXXXXX 
+			<button type="button" class="btn btn-default btn-xs">
+          		<span class="glyphicon glyphicon-remove"></span> 
+        	</button>
+		</li>
+	</div>
+
+</div>
+      		
+
+</body>
+</html>
+
+{% endblock %}
+
+
+<!-- <div class="row">
+  <div class="col-xs-12 col-md-8"></div>
+  <div class="col-xs-6 col-md-4">
+
+  	<ul class='our_col'>
+<li>
+	<div class="row">Hotels</div>
+	<select>
 	{%for hotel in all_hotels%}
   <option>{{hotel.name}}</option>
    {% endfor %}
 </select>
-
+</li>
+<li>
+	<div class="row">Restaurant</div>
 <select>
 	{%for restaurant in all_restaurants%}
   <option>{{restaurant.name}}</option>
    {% endfor %}
 </select>
-
+</li>
+<li>
+	<div class="row">Things to Do</div>
 <select>
 	{%for things_to_do in all_things_to_do%}
   <option>{{things_to_do.name}}</option>
    {% endfor %}
 </select>
-
-</body>
-</html>
+</li>
+<div class="row">Day 2</div>
+<div class="row">
+<nav>
+  <ul class="pagination">
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+</div> -->

@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+  	<title>{% block title %}</title>
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+ 	<nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-plane" aria-hidden="true"></span>Trip Planner!</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+         <li><a href="/above">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+
+
+
+  </div><!-- /.container -->
+</nav>
+
+   {% block content %}{% endblock %}
+   <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+   <script src="/bower_components/jquery/dist/jquery.min.map"></script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtdT97WncFP6Nc0TtAqL6qKvvqN9y9RIA&sensor=true"></script>
+   <script>
+	   	function initialize_gmaps() {
+	    // initialize new google maps LatLng object
+	    var myLatlng = new google.maps.LatLng(40.705189,-74.009209);
+	    // set the map options hash
+	    var mapOptions = {
+	        center: myLatlng,
+	        zoom: 16,
+	        mapTypeId: google.maps.MapTypeId.ROADMAP
+	    };
+	    // get the maps div's HTML obj
+	    var map_canvas_obj = document.getElementById("map-canvas");
+	    // initialize a new Google Map with the options
+	    var map = new google.maps.Map(map_canvas_obj, mapOptions);
+	    // Add the marker to the map
+	    var marker = new google.maps.Marker({
+	        position: myLatlng,
+	        title:"Hello World!"
+	    });
+	    // Add the marker to the map by calling setMap()
+	    marker.setMap(map);
+	}
+	
+	    $(document).ready(function() {
+    initialize_gmaps();
+});
+
+
+    </script>
+
+ </body>
+
+</html>
